@@ -1,5 +1,11 @@
 import { HeroCarousel } from "./components/HeroCarousel";
+import { BetterSection } from "./components/BetterSection";
+import { CategoryShowcase } from "./components/CategoryShowcase";
+import { EditorialTriptych } from "./components/EditorialTriptych";
+import { NewArrivalsCarousel } from "./components/NewArrivalsCarousel";
+import { ProductRailCarousel } from "./components/ProductRailCarousel";
 import { StorySection } from "./components/StorySection";
+import { ValuePillars } from "./components/ValuePillars";
 
 export default function Home() {
   return (
@@ -16,6 +22,12 @@ export default function Home() {
       </div>
       <HeroCarousel />
       <StorySection />
+      <BetterSection />
+      <CategoryShowcase />
+      <NewArrivalsCarousel />
+      <ProductRailCarousel />
+      <EditorialTriptych />
+      <ValuePillars />
     </main>
   );
 }
