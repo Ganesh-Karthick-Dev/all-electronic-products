@@ -4,6 +4,7 @@ import { CategoryShowcase } from "./components/CategoryShowcase";
 import { EditorialTriptych } from "./components/EditorialTriptych";
 import { NewArrivalsCarousel } from "./components/NewArrivalsCarousel";
 import { ProductRailCarousel } from "./components/ProductRailCarousel";
+import { SiteFooter } from "./components/SiteFooter";
 import { StorySection } from "./components/StorySection";
 import { ValuePillars } from "./components/ValuePillars";
 
@@ -28,6 +29,7 @@ export default function Home() {
       <ProductRailCarousel />
       <EditorialTriptych />
       <ValuePillars />
+      <SiteFooter />
     </main>
   );
 }
