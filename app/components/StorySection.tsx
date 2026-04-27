@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function StorySection() {
   const sectionRef = useRef<HTMLElement | null>(null);
-  const markerRef = useRef<HTMLDivElement | null>(null);
+  const markerRef = useRef<SVGGElement | null>(null);
   const frameRef = useRef<HTMLDivElement | null>(null);
   const imageRef = useRef<SVGImageElement | null>(null);
   const copyRef = useRef<HTMLParagraphElement | null>(null);
@@ -84,33 +84,24 @@ export function StorySection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-[#f2f0ea] px-4 pt-28 pb-28 text-[#171916] sm:px-8 sm:pt-36 lg:pt-40"
+      className="relative overflow-hidden bg-[#f2f0ea] px-4 pt-24 pb-28 text-[#171916] sm:px-8 sm:pt-32 lg:pt-36"
       ref={sectionRef}
       aria-label="Our story"
     >
       <div
-        className="relative z-10 mx-auto -mb-[2px] flex h-[116px] w-5 flex-col items-center"
-        ref={markerRef}
-        aria-hidden="true"
-      >
-        <span className="block size-3 rounded-full bg-[#1d1e1a]" />
-        <span className="block h-[108px] w-px bg-[#86847d]" />
-      </div>
-
-      <div
-        className="relative mx-auto aspect-[2.12/1] w-[min(92rem,88vw)] max-w-[1480px]"
+        className="relative mx-auto aspect-[1.86/1] w-[min(92rem,88vw)] max-w-[1480px]"
         ref={frameRef}
       >
         <svg
           className="absolute inset-0 size-full overflow-visible"
-          viewBox="0 0 1200 566"
+          viewBox="0 0 1200 760"
           preserveAspectRatio="none"
           role="img"
-          aria-label="Green hills framed by a rounded arch"
+          aria-label="Green hills framed by a rounded pill"
         >
           <defs>
             <clipPath id="story-arch-clip" clipPathUnits="userSpaceOnUse">
-              <path d="M82 530 L1118 530 C1118 248 980 112 742 112 L458 112 C220 112 82 248 82 530 Z" />
+              <ellipse cx="600" cy="474" rx="482" ry="236" />
             </clipPath>
             <linearGradient id="story-shade" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0" stopColor="#080b06" stopOpacity="0.12" />
@@ -119,14 +110,25 @@ export function StorySection() {
             </linearGradient>
           </defs>
 
-          <path
-            d="M36 564 L1164 564 C1164 198 1000 58 742 58 L458 58 C200 58 36 198 36 564 Z"
+          <g ref={markerRef}>
+            <circle cx="600" cy="26" r="7.5" fill="#1d1e1a" />
+            <line x1="600" y1="34" x2="600" y2="176" stroke="#86847d" strokeWidth="1" />
+          </g>
+
+          <ellipse
+            cx="600"
+            cy="474"
+            rx="566"
+            ry="300"
             fill="none"
             stroke="#8c8a83"
             strokeWidth="1"
           />
-          <path
-            d="M58 548 L1142 548 C1142 222 992 82 742 82 L458 82 C208 82 58 222 58 548 Z"
+          <ellipse
+            cx="600"
+            cy="474"
+            rx="540"
+            ry="276"
             fill="none"
             stroke="#8c8a83"
             strokeWidth="1"
@@ -135,22 +137,19 @@ export function StorySection() {
           <image
             ref={imageRef}
             href="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=84"
-            x="58"
-            y="48"
-            width="1084"
-            height="560"
+            x="118"
+            y="208"
+            width="964"
+            height="540"
             preserveAspectRatio="xMidYMid slice"
             clipPath="url(#story-arch-clip)"
           />
-          <path
-            d="M82 530 L1118 530 C1118 248 980 112 742 112 L458 112 C220 112 82 248 82 530 Z"
-            fill="url(#story-shade)"
-          />
+          <ellipse cx="600" cy="474" rx="482" ry="236" fill="url(#story-shade)" />
         </svg>
 
-        <div className="absolute inset-x-[8%] top-[34%] z-10 flex justify-center text-center sm:top-[38%]">
+        <div className="absolute inset-x-[10%] top-[57%] z-10 flex -translate-y-1/2 justify-center text-center">
           <p
-            className="max-w-[920px] font-serif text-[clamp(1.15rem,2.25vw,2.55rem)] leading-[1.48] font-normal tracking-[-0.045em] text-[#fffaf1] drop-shadow-[0_12px_34px_rgba(0,0,0,0.35)]"
+            className="max-w-[900px] font-serif text-[clamp(1.1rem,2vw,2.28rem)] leading-[1.5] font-normal tracking-[-0.045em] text-[#fffaf1] drop-shadow-[0_12px_34px_rgba(0,0,0,0.35)]"
             ref={copyRef}
           >
             We set out to create an entirely new category of shoes inspired by
