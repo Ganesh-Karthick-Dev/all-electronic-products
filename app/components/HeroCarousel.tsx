@@ -341,6 +341,7 @@ export function HeroCarousel() {
         autoAlpha: 0,
         duration: 0.35,
         ease: "power2.inOut",
+        y: 0,
         yPercent: -105,
       });
       return;
@@ -350,6 +351,7 @@ export function HeroCarousel() {
       autoAlpha: 1,
       duration: 0.55,
       ease: "power3.out",
+      y: 0,
       yPercent: 0,
     });
 
@@ -377,10 +379,11 @@ export function HeroCarousel() {
       onMouseLeave={() => setActiveMenu(null)}
     >
       <div
-        className={`pointer-events-auto invisible absolute inset-x-0 top-0 z-20 hidden -translate-y-full origin-top bg-[#eeeae1] px-4 pt-[104px] pb-8 opacity-0 shadow-[0_24px_70px_rgba(21,21,18,0.18)] md:block ${
+        className={`pointer-events-auto absolute inset-x-0 top-0 z-20 hidden origin-top bg-[#eeeae1] px-4 pt-[104px] pb-8 shadow-[0_24px_70px_rgba(21,21,18,0.18)] md:block ${
           activeMenu ? "" : "pointer-events-none"
         }`}
         ref={megaMenuRef}
+        style={{ opacity: 0, visibility: "hidden" }}
         onMouseEnter={() => setActiveMenu(activeMenu ?? "women")}
         onMouseLeave={() => setActiveMenu(null)}
       >
@@ -484,12 +487,15 @@ export function HeroCarousel() {
         <nav
           className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-11 text-[1.05rem] font-black tracking-[0.08em] uppercase md:flex"
           aria-label="Primary navigation"
+          onMouseEnter={() => setActiveMenu(activeMenu ?? "women")}
         >
           <button
             className={`cursor-pointer border-0 bg-transparent p-0 font-inherit tracking-[inherit] uppercase transition hover:text-[#657364] ${
               activeMenu === "men" ? "text-[#8d8b85]" : ""
             }`}
             type="button"
+            onClick={() => setActiveMenu("men")}
+            onFocus={() => setActiveMenu("men")}
             onMouseEnter={() => setActiveMenu("men")}
           >
             Men
@@ -499,6 +505,8 @@ export function HeroCarousel() {
               activeMenu === "women" ? "text-[#20211d]" : ""
             }`}
             type="button"
+            onClick={() => setActiveMenu("women")}
+            onFocus={() => setActiveMenu("women")}
             onMouseEnter={() => setActiveMenu("women")}
           >
             Women
@@ -508,6 +516,8 @@ export function HeroCarousel() {
               activeMenu === "sale" ? "text-[#8d8b85]" : ""
             }`}
             type="button"
+            onClick={() => setActiveMenu("sale")}
+            onFocus={() => setActiveMenu("sale")}
             onMouseEnter={() => setActiveMenu("sale")}
           >
             Sale

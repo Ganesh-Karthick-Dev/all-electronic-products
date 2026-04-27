@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - text: Extra 25% off sale items.
+      - link "Shop Men" [ref=e4] [cursor=pointer]:
+        - /url: "#men"
+      - generic [ref=e5]: "|"
+      - link "Shop Women" [ref=e6] [cursor=pointer]:
+        - /url: "#women"
+    - region "Featured products" [ref=e7]:
+      - generic [ref=e67]:
+        - link "Shoes" [ref=e68] [cursor=pointer]:
+          - /url: "#"
+        - link "Socks & Apparel" [ref=e69] [cursor=pointer]:
+          - /url: "#"
+        - link "Sale" [ref=e70] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e8]:
+        - link "Allbirds home" [ref=e9] [cursor=pointer]:
+          - /url: "#"
+          - text: allbirds
+        - navigation "Primary navigation" [ref=e10]:
+          - button "Men" [ref=e11] [cursor=pointer]
+          - button "Women" [ref=e12] [cursor=pointer]
+          - button "Sale" [ref=e13] [cursor=pointer]
+        - generic [ref=e14]:
+          - link "About" [ref=e15] [cursor=pointer]:
+            - /url: "#about"
+          - link "ReRun" [ref=e16] [cursor=pointer]:
+            - /url: "#rerun"
+          - button "Search" [ref=e17]:
+            - img [ref=e18]
+          - button "Account" [ref=e20]:
+            - img [ref=e21]
+          - button "Help" [ref=e23]:
+            - img [ref=e24]
+          - button "Cart" [ref=e27]:
+            - img [ref=e28]
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: Adventurous Auburn
+        - generic [ref=e38]:
+          - generic [ref=e39]: Naturally grounded
+          - strong [ref=e40]: PANTONE
+      - generic [ref=e44]:
+        - generic [ref=e45]: New season canvas
+        - heading "The New Canvas Cruiser Collection" [level=1] [ref=e72]
+        - generic [ref=e47]:
+          - link "Shop Men" [ref=e48] [cursor=pointer]:
+            - /url: "#men"
+          - link "Shop Women" [ref=e49] [cursor=pointer]:
+            - /url: "#women"
+      - button "Pause carousel" [ref=e50] [cursor=pointer]:
+        - img [ref=e51]
+    - region "Our story" [ref=e53]
+  - button "Open Next.js Dev Tools" [ref=e59] [cursor=pointer]:
+    - img [ref=e60]
+  - alert [ref=e63]

@@ -1,4 +1,5 @@
 import { HeroCarousel } from "./components/HeroCarousel";
+import { StorySection } from "./components/StorySection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         </a>
       </div>
       <HeroCarousel />
+      <StorySection />
     </main>
   );
 }
